@@ -69,7 +69,7 @@ class ViewController : GLKViewController, GKGameCenterControllerDelegateProtocol
     private lateinit var gameRenderer: GameRenderer
 
     override fun viewDidLoad() {
-        setupGameCenterAuthentication()
+        //setupGameCenterAuthentication()
 
         gameCenterButton.apply {
             layer.borderWidth = 1.0
