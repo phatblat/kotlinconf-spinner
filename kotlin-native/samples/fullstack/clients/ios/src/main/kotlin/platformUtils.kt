@@ -71,6 +71,7 @@ class StatsFetcherImpl : StatsFetcher {
                 }
 
                 if (didCompleteWithError != null) {
+                    println("Reqest error $didCompleteWithError")
                     return
                 }
 
