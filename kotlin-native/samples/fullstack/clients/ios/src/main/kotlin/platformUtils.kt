@@ -32,8 +32,23 @@ class StatsFetcherImpl : StatsFetcher {
     }
 
     override fun asyncTryClickAndFetch(): Boolean {
+        for (i in 1..100) {
+            println("Sending click request $")
+            asyncFireAndForgetRequest("$server/json/click")
+        }
         return asyncRequest("$server/json/click")
         // TODO: handle if the request will fail.
+    }
+
+    /**
+     * Fires off a single get request to the given URL.
+     */
+    private fun asyncFireAndForgetRequest(url: String) {
+        val session = NSURLSession.sessionWithConfiguration(
+            NSURLSessionConfiguration.defaultSessionConfiguration()
+        )
+
+        session.dataTaskWithURL(NSURL(URLString = url)).resume()
     }
 
     private fun asyncRequest(url: String): Boolean {
