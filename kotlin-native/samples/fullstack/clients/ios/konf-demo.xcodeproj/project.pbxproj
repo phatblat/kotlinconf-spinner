@@ -276,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "$SRCROOT/../../gradlew -p $SRCROOT compileKonanApp -Pdisable.android=true";
+			shellScript = "export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_111.jdk/Contents/Home\n$SRCROOT/../../gradlew -p $SRCROOT compileKonanApp -Pdisable.android=true";
 		};
 		2CED25F51F75260600A6326D /* Replace Original Binary */ = {
 			isa = PBXShellScriptBuildPhase;
